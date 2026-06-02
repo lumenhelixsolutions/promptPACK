@@ -1,0 +1,13 @@
+<svg width="640" height="160" viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="promptPACK logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="160" rx="28" fill="#0d1117"/>
+  <rect x="18" y="18" width="124" height="124" rx="24" fill="url(#g)"/>
+  <path d="M48 52h64c18 0 30 12 30 29s-12 29-30 29H70v18H48V52zm22 18v22h38c8 0 13-4 13-11s-5-11-13-11H70z" fill="#fff"/>
+  <text x="168" y="75" font-family="Inter, system-ui, sans-serif" font-size="40" font-weight="800" fill="#e6edf3">prompt<tspan fill="#38bdf8">PACK</tspan></text>
+  <text x="170" y="112" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#8b949e">compress • preserve • route</text>
+</svg>

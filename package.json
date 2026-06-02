@@ -1,0 +1,47 @@
+{
+  "name": "promptpack",
+  "version": "1.0.0-preview",
+  "private": true,
+  "description": "Local-first Chrome extension for objective-aware prompt compression, preservation controls, and human-in-the-loop prompt handoff.",
+  "scripts": {
+    "test": "node tests/preset-smoke.test.js",
+    "lint:manifest": "node tests/manifest-smoke.test.js",
+    "ci": "npm run lint:manifest && npm test",
+    "package:extension": "node scripts/package-extension.js",
+    "release:check": "npm run ci && npm run package:extension",
+    "qa:manual-note": "node scripts/manual-qa-summary.js",
+    "release:final-check": "npm run ci && npm run package:extension && npm run qa:manual-note",
+    "audit:static": "node scripts/static-safety-audit.js",
+    "commercial:gate": "npm run ci && npm run package:extension && npm run qa:manual-note && npm run audit:static"
+  },
+  "keywords": [
+    "ai-tools",
+    "browser-extension",
+    "chrome-extension",
+    "chrome-side-panel",
+    "developer-tools",
+    "human-in-the-loop",
+    "llm",
+    "local-first",
+    "manifest-v3",
+    "must-fact-preservation",
+    "objective-detection",
+    "privacy-first",
+    "productivity",
+    "prompt-compression",
+    "prompt-engineering",
+    "prompt-optimization",
+    "promptpack",
+    "token-compression"
+  ],
+  "license": "MIT",
+  "devDependencies": {},
+  "homepage": "https://github.com/christophergordonphillips/promptpack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophergordonphillips/promptpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christophergordonphillips/promptpack/issues"
+  }
+}

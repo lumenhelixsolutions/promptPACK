@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>promptPACK Manual Smoke Test Page</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 980px; margin: 40px auto; line-height: 1.5; padding: 0 20px; }
+    textarea, input, [contenteditable] { width: 100%; box-sizing: border-box; margin: 10px 0 24px; padding: 12px; border: 1px solid #aaa; border-radius: 10px; font: inherit; }
+    textarea { min-height: 140px; }
+    [contenteditable] { min-height: 120px; background: #f8f8f8; }
+    code { background: #eee; padding: 2px 5px; border-radius: 5px; }
+    .sample { border-left: 5px solid #7c3aed; padding: 12px 16px; background: #f6f1ff; }
+  </style>
+</head>
+<body>
+  <h1>promptPACK Manual Smoke Test Page</h1>
+
+  <p>This page is for manual browser testing of selected-text import and user-confirmed insertion.</p>
+
+  <h2>1. Select this sample text</h2>
+  <div class="sample">
+    I want to build a Chrome extension and I'm thinking it should have token compression advice. It should be local-first, use Manifest V3, preserve locked phrases, show before and after token counts, warn when meaning may be lost, and insert only after user action.
+  </div>
+
+  <h2>2. Insert target: textarea</h2>
+  <textarea placeholder="Click here, then use promptPACK → Insert into active field"></textarea>
+
+  <h2>3. Insert target: input</h2>
+  <input placeholder="Click here, then insert output">
+
+  <h2>4. Insert target: contenteditable</h2>
+  <div contenteditable="true">Click here, then insert output.</div>
+
+  <h2>Expected</h2>
+  <ul>
+    <li><code>Use selected text</code> imports only the highlighted text.</li>
+    <li><code>Copy output</code> writes output to clipboard.</li>
+    <li><code>Insert into active field</code> inserts only after a user click.</li>
+    <li>No page should auto-submit or auto-send anything.</li>
+  </ul>
+</body>
+</html>

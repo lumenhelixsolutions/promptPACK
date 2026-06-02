@@ -1,0 +1,2 @@
+bb2f544254d85ebf36e44eee621de19d29af2193d59fb33a36f35fcb50e418df  promptpack-extension-only-v1.0.0-preview.zip
+47b67f47e90ad48f03e29120fc875b1a608c2dd1bc09e5e9681a797e0043645e  promptpack-source-v1.0.0-preview.zip
