@@ -1,22 +1,29 @@
-# Demo Script
+# PromptPack — 60-Second Demo Script
 
-## 30-second demo
+## 0:00 — Hook
+> "Your prompts are too long. LLMs ignore the middle. PromptPack fixes that."
 
-1. Open promptPACK side panel.
-2. Click Preset Tests → Run all.
-3. Show PASS 6 / WARN 0 / FAIL 0.
-4. Paste a messy prompt.
-5. Add one locked phrase and one must-preserve fact.
-6. Click Compress / Optimize.
-7. Show objective, token result, preservation evidence, and decision route.
-8. Click Copy output.
-9. Click into a text field.
-10. Click Insert into active field.
+## 0:10 — Problem
+Show a 400-token prompt about a coding task. Highlight the fluff.
+> "Most of this is noise. The model only needs the objective and constraints."
 
-## Voiceover
+## 0:20 — Solution
+Click the PromptPack icon. Paste the long prompt. Hit "Compress."
+> "PromptPack reads the objective, preserves your locked phrases and must-facts, and strips the rest."
 
-"promptPACK is a local-first Chrome extension that checks whether a prompt should be compressed, left alone, or turned into a handoff packet. It preserves must-facts, explains its decision route, and never inserts text unless you click the button."
+## 0:30 — Comparison
+Show the side-by-side panel.
+- Left: original 400 tokens
+- Right: compressed 120 tokens
+- Preservation pills: locks 100%, must-facts 100%
 
-## Hook
+## 0:40 — Features
+Rapid-fire showcase:
+- Switch objective (coding, research, clarity)
+- Change target platform (ChatGPT, Claude, Gemini)
+- Adjust aggression (conservative → aggressive)
+- Export the handoff packet
 
-Most prompt tools rewrite everything. promptPACK knows when not to.
+## 0:55 — CTA
+> "PromptPack. Compress the prompt. Preserve the point. Free and open source."
+[GitHub URL + Chrome Web Store badge]

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="680" viewBox="0 0 920 680">
+  <defs>
+    <linearGradient id="gl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="680" fill="url(#gl)" rx="20"/>
+  <rect x="40" y="40" width="840" height="600" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" rx="16"/>
+  <text x="460" y="160" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="56" font-weight="700" letter-spacing="-0.02em">PromptPack</text>
+  <text x="460" y="220" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="22">The open-source prompt compression engine for ChatGPT, Claude, and Gemini.</text>
+  <rect x="180" y="300" width="240" height="160" fill="rgba(59,130,246,0.12)" rx="12"/>
+  <rect x="500" y="300" width="240" height="160" fill="rgba(16,185,129,0.12)" rx="12"/>
+  <path d="M420 380 L500 380" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+  <text x="300" y="395" text-anchor="middle" fill="#60a5fa" font-family="system-ui,sans-serif" font-size="18" font-weight="600">Verbose Prompt</text>
+  <text x="620" y="395" text-anchor="middle" fill="#34d399" font-family="system-ui,sans-serif" font-size="18" font-weight="600">Compressed</text>
+  <text x="460" y="560" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="16">Free • Open Source • Zero Telemetry</text>
+</svg>
