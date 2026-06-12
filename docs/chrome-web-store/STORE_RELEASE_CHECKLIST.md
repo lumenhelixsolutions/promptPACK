@@ -29,7 +29,8 @@
 
 ## Release
 
-- [ ] Create GitHub release v0.1.2
-- [ ] Attach ZIP
-- [ ] Mark as pre-release if still developer preview
-- [ ] Submit to Chrome Web Store developer dashboard
+- [x] `npm run release:check` produces dist ZIP
+- [x] Portfolio pack script: `D:/projects/scripts/package-cws-extensions.ps1`
+- [ ] Capture screenshots per `SCREENSHOT_PLAN.md`
+- [ ] Create GitHub release v1.0.0
+- [ ] Submit ZIP to Chrome Web Store developer dashboard ($5 fee)
