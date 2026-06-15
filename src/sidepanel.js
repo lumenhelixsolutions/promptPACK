@@ -410,3 +410,90 @@ $("presetCoding").addEventListener("click", () => runPreset("coding"));
 $("presetAudit").addEventListener("click", () => runPreset("audit"));
 $("presetResearch").addEventListener("click", () => runPreset("research"));
 $("presetLocal").addEventListener("click", () => runPreset("local"));
+
+const TOUR_KEY = "pp:tourDone";
+const OPTIONS_KEY = "pp:options";
+const OBJECTIVES = ["compress", "clarity", "coding", "local", "research", "audit"];
+const TOUR_STEPS = [
+  { title: "Pick an objective", body: "Choose what you want promptPACK to do — compression, coding handoff, research, and more." },
+  { title: "Compress safely", body: "Run Compress / Optimize. Locked phrases and must-facts are preserved before you copy or insert." },
+  { title: "Copy or insert", body: "Review the verdict and decision route. Insert only when you confirm — never automatic." },
+];
+let tourIndex = 0;
+
+const RESEARCH_HANDOFF_SNIPPET = [
+  "Export vault from NOTEtoolsLM (lookBOOK manifest format).",
+  "Import JSON in lookBOOK Demo Lab → Import vault manifest.",
+  "Run analyze + panels on your keyframe or comic page.",
+].join("\n");
+
+function updateResearchLink() {
+  const link = $("researchHandoffLink");
+  if (!link) return;
+  link.classList.toggle("visible", $("objective").value === "research");
+}
+
+$("researchHandoffLink")?.addEventListener("click", async () => {
+  await navigator.clipboard.writeText(RESEARCH_HANDOFF_SNIPPET);
+  $("advisor").innerHTML = `<strong>Research handoff</strong><br>${RESEARCH_HANDOFF_SNIPPET.replace(/\n/g, "<br>")}`;
+});
+
+async function loadOptions() {
+  const data = await chrome.storage.local.get(OPTIONS_KEY);
+  const opts = data[OPTIONS_KEY];
+  if (!opts) return;
+  if (opts.defaultObjective) $("objective").value = opts.defaultObjective;
+  if (opts.defaultAggression) $("aggression").value = opts.defaultAggression;
+  updateResearchLink();
+}
+
+function renderTour() {
+  const step = TOUR_STEPS[tourIndex];
+  $("tourStepLabel").textContent = `Step ${tourIndex + 1} of ${TOUR_STEPS.length}`;
+  $("tourTitle").textContent = step.title;
+  $("tourBody").textContent = step.body;
+  $("tourNext").textContent = tourIndex === TOUR_STEPS.length - 1 ? "Done" : "Next";
+}
+
+function openTour() {
+  tourIndex = 0;
+  renderTour();
+  $("tourOverlay").classList.add("open");
+}
+
+function closeTour() {
+  $("tourOverlay").classList.remove("open");
+  localStorage.setItem(TOUR_KEY, "1");
+}
+
+function runCompareModes() {
+  const text = $("input").value.trim();
+  if (!text) return;
+  const card = $("compareCard");
+  card.classList.add("visible");
+  const rows = OBJECTIVES.map((obj) => {
+    const run = runEngine(text, obj, linesFrom("locks"), linesFrom("must"), $("target").value, $("aggression").value);
+    return `<div class="history-row"><div class="history-info"><div class="history-detail"><strong>${obj}</strong> · ${run.verdict}</div><div class="history-date">${run.original} → ${run.out} tokens (${run.pct}%)</div></div></div>`;
+  });
+  $("compareResults").innerHTML = rows.join("");
+}
+
+$("objective").addEventListener("change", updateResearchLink);
+$("compareModes").addEventListener("click", runCompareModes);
+$("openOptions").addEventListener("click", () => chrome.runtime.openOptionsPage());
+$("restartTour").addEventListener("click", openTour);
+$("tourSkip").addEventListener("click", closeTour);
+$("tourNext").addEventListener("click", () => {
+  if (tourIndex >= TOUR_STEPS.length - 1) closeTour();
+  else { tourIndex += 1; renderTour(); }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.altKey && e.key === "c") { e.preventDefault(); run(); }
+  if (e.altKey && e.key === "a") { e.preventDefault(); analyzeOnly(); }
+  if (e.altKey && e.key === "s") { e.preventDefault(); useSelection(); }
+});
+
+loadOptions();
+updateResearchLink();
+if (!localStorage.getItem(TOUR_KEY)) openTour();

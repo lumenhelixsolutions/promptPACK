@@ -70,6 +70,17 @@ Expected:
 PASS 6 / WARN 0 / FAIL 0
 ```
 
+## Keyboard shortcuts (sidepanel)
+
+Tab order follows the visual layout: **Use selected text → Analyze → Compress → Compare Modes → Objective → Target → Aggression → Input → preservation fields → Output → Copy / Insert**.
+
+| Shortcut | Action |
+|----------|--------|
+| `Alt+C` | Compress / optimize |
+| `Alt+A` | Analyze objective |
+| `Alt+S` | Use selected text from active page |
+| `Tab` / `Shift+Tab` | Move focus through controls in DOM order |
+
 ## Development
 
 ```bash

@@ -3,6 +3,11 @@
   "name": "promptPACK",
   "version": "1.0.0",
   "description": "Local-first Chrome extension for objective-aware prompt compression, preservation controls, and human-in-the-loop prompt handoff.",
+  "options_page": "src/options.html",
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  },
   "permissions": [
     "sidePanel",
     "storage",
