@@ -1,7 +1,11 @@
 # promptPACK
 
 <p align="center">
-  <img src="docs/assets/logo.svg" alt="promptPACK logo" width="160">
+  <img src="docs/assets/hero.svg" alt="promptPACK header" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/assets/logo.svg" alt="promptPACK logo" width="120">
 </p>
 
 <h3 align="center">Objective-aware prompt compression and human-in-the-loop handoff</h3>
@@ -9,9 +13,9 @@
 <p align="center">A local-first Chrome extension that compresses prompts, preserves must-facts, and builds structured handoff packets only when you approve.</p>
 
 <p align="center">
-  <a href="https://lumenhelixsolutions.github.io/promptPACK/">Launch Page</a>
+  <a href="https://lumenhelixlab.github.io/promptPACK/">Launch Page</a>
   <span> · </span>
-  <a href="https://github.com/lumenhelixsolutions/promptPACK">GitHub</a>
+  <a href="https://github.com/lumenhelixlab/promptPACK">GitHub</a>
   <span> · </span>
   <a href="https://lumenhelix.com">LumenHelix</a>
 </p>
@@ -31,7 +35,7 @@ promptPACK is a local-first Chrome extension for objective-aware prompt compress
 ### macOS / Linux
 
 ```bash
-git clone https://github.com/lumenhelixsolutions/promptPACK.git
+git clone https://github.com/lumenhelixlab/promptPACK.git
 cd promptPACK
 npm install
 npm run ci
@@ -41,7 +45,7 @@ npm run ci
 ### Windows (PowerShell)
 
 ```powershell
-git clone https://github.com/lumenhelixsolutions/promptPACK.git
+git clone https://github.com/lumenhelixlab/promptPACK.git
 Set-Location promptPACK
 npm install
 npm run ci
@@ -51,7 +55,7 @@ npm run ci
 ### Windows (Git Bash / WSL)
 
 ```bash
-git clone https://github.com/lumenhelixsolutions/promptPACK.git
+git clone https://github.com/lumenhelixlab/promptPACK.git
 cd promptPACK
 npm install
 npm run ci
