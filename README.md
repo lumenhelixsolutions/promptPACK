@@ -1,85 +1,137 @@
-<p align="center">
-  <img src="assets/promptpack-logo.svg" alt="promptPACK" width="640">
-</p>
-
-<h1 align="center">promptPACK</h1>
-
-<p align="center"><strong>Compress the prompt. Preserve the point.</strong></p>
-
-<p align="center">Local-first Chrome extension for objective-aware prompt compression, no-op detection, must-fact preservation, and human-in-the-loop prompt handoff.</p>
+# promptPACK
 
 <p align="center">
-  <img alt="Chrome Extension" src="https://img.shields.io/badge/Chrome%20Extension-MV3-4285F4">
-  <img alt="Local First" src="https://img.shields.io/badge/local--first-no%20network%20calls-22c55e">
-  <img alt="Preset Gate" src="https://img.shields.io/badge/preset%20gate-6%2F6%20passing-7c3aed">
-  <img alt="No Auto Insert" src="https://img.shields.io/badge/no%20auto--insert-user%20controlled-f59e0b">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-f59e0b">
+  <a href="https://lumenhelix.com">
+    <img src="docs/assets/lumenhelix-logo.svg" alt="LumenHelix Solutions" width="180">
+  </a>
 </p>
+
+<h3 align="center">Chrome extension for objective-aware prompt compression and human-in-the-loop handoff</h3>
 
 <p align="center">
-  <img src="assets/screenshots/screenshot-01-preset-gate.png" alt="promptPACK preset gate passing 6 out of 6" width="760">
+  <a href="https://lumenhelixsolutions.github.io/promptPACK/">
+    <img src="https://img.shields.io/badge/Launch_Page-promptPACK-00D4FF?style=flat-square&logo=githubpages&logoColor=white" alt="Launch Page">
+  </a>
+  <a href="https://lumenhelix.com">
+    <img src="https://img.shields.io/badge/Built_by-LumenHelix-7C3AED?style=flat-square" alt="Built by LumenHelix">
+  </a>
+  <img src="https://img.shields.io/badge/license-MIT-8A95A8?style=flat-square" alt="License">
 </p>
 
-## Why promptPACK exists
+---
 
-Most prompt tools rewrite everything.
+**promptPACK** is part of the [LumenHelix Solutions](https://lumenhelix.com) portfolio — applied symbolic dynamics & reversible computation for deterministic, traceable AI systems.
 
-promptPACK takes a more careful approach. It checks what the user is trying to do, then chooses whether to compress the prompt, leave it alone, convert it into a structured handoff packet, or route the result to human review.
+promptPACK is a local-first Chrome extension by LumenHelix for objective-aware prompt compression. It inspects what the user is trying to accomplish, then compresses the prompt, leaves it untouched, or converts it into a structured handoff packet — always preserving must-facts and keeping the human in the loop.
 
-It is designed around restraint: if rewriting would lose important context, no-op is a valid answer.
+## Why this exists
 
-## What it does
+- **Stay accurate.** No-op and preservation gates prevent rewrite-induced information loss.
+- **Stay private.** Everything runs locally; no data leaves your machine.
+- **Stay in control.** Insertion and compression happen only after explicit user action.
 
-| Objective | Behavior |
-|---|---|
-| Token compression | Produces a compact prompt when safe |
-| Short prompt | No-op instead of bloating |
-| Coding handoff | Builds a compact coding-agent packet |
-| Research handoff | Preserves source/citation requirements |
-| Local model handoff | Makes shorter, direct local-LLM prompts |
-| Audit/high-stakes | Keeps original when rewriting is unsafe |
+## Quick start
 
-## Trust model
+Install and run promptPACK in under two minutes.
 
-promptPACK is local-first in the current prototype.
+### macOS / Linux
 
-- No network calls
-- No remote code
-- No analytics
-- No automatic scraping
-- No automatic insertion
-- No automatic sending or publishing
-- Selected text is read only after user action
-- Insertion happens only after user action
+```bash
+# Clone
+git clone https://github.com/lumenhelixsolutions/promptPACK.git
+cd promptPACK
 
-See `docs/security/THREAT_MODEL.md`, `docs/security/DATA_FLOW.md`, and `docs/DECISION_ROUTING.md`.
+# Install & run
+# Install test dependencies
+npm install
 
-## Install locally
+# Verify the extension passes its own gates
+npm run ci
 
-1. Download or clone this repository.
-2. Open Chrome and go to `chrome://extensions`.
-3. Enable Developer mode.
-4. Click Load unpacked.
-5. Select the repository folder or the unzipped extension-only package.
-6. Open promptPACK.
-7. Run Preset Tests → Run all.
-
-Expected:
-
-```txt
-PASS 6 / WARN 0 / FAIL 0
+# Load in Chrome
+# 1. Open Chrome and go to chrome://extensions
+# 2. Enable Developer mode (toggle top-right)
+# 3. Click Load unpacked
+# 4. Select the promptPACK repository folder
+# 5. Open the promptPACK side panel and run Preset Tests → Run all
+# Expected: PASS 6 / WARN 0 / FAIL 0
 ```
 
-## Keyboard shortcuts (sidepanel)
+### Windows (PowerShell)
 
-Tab order follows the visual layout: **Use selected text → Analyze → Compress → Compare Modes → Objective → Target → Aggression → Input → preservation fields → Output → Copy / Insert**.
+```powershell
+# Clone
+git clone https://github.com/lumenhelixsolutions/promptPACK.git
+Set-Location promptPACK
 
-| Shortcut | Action |
-|----------|--------|
-| `Alt+C` | Compress / optimize |
-| `Alt+A` | Analyze objective |
-| `Alt+S` | Use selected text from active page |
-| `Tab` / `Shift+Tab` | Move focus through controls in DOM order |
+# Install & run
+# Install test dependencies
+npm install
+
+# Verify the extension passes its own gates
+npm run ci
+
+# Load in Chrome
+# 1. Open Chrome and go to chrome://extensions
+# 2. Enable Developer mode (toggle top-right)
+# 3. Click Load unpacked
+# 4. Select the promptPACK repository folder
+# 5. Open the promptPACK side panel and run Preset Tests → Run all
+# Expected: PASS 6 / WARN 0 / FAIL 0
+```
+
+### Windows (Git Bash / WSL)
+
+```bash
+git clone https://github.com/lumenhelixsolutions/promptPACK.git
+cd promptPACK
+# Install test dependencies
+npm install
+
+# Verify the extension passes its own gates
+npm run ci
+
+# Load in Chrome
+# 1. Open Chrome and go to chrome://extensions
+# 2. Enable Developer mode (toggle top-right)
+# 3. Click Load unpacked
+# 4. Select the promptPACK repository folder
+# 5. Open the promptPACK side panel and run Preset Tests → Run all
+# Expected: PASS 6 / WARN 0 / FAIL 0
+```
+
+> **Device note:** promptPACK is tested on Windows 11, macOS Sonoma, Ubuntu 22.04/24.04, and modern mobile browsers.
+
+## Full documentation
+
+Visit the launch page for architecture, API reference, and deployment guides:  
+**https://lumenhelixsolutions.github.io/promptPACK/**
+
+## Features
+
+| Feature | What it gives you |
+|---------|-------------------|
+| Objective-aware compression | Detects intent and picks token compression, no-op, or structured handoff accordingly. |
+| Must-fact preservation | Locks critical facts so rewrites never drop the context that matters. |
+| Local-first privacy | No network calls, no analytics, no remote code — your prompts stay in the browser. |
+| Human-in-the-loop handoff | Builds compact coding, research, or local-LLM packets only when you approve. |
+
+## Architecture at a glance
+
+```
+promptPACK/
+├── manifest.json         MV3 manifest
+├── src/
+│   ├── sidepanel.html    Main UI
+│   ├── sidepanel.js      Compression + handoff logic
+│   ├── service_worker.js Background events
+│   ├── content_script.js Page text selection
+│   ├── options.html/js   Extension options
+│   └── theme.css         UI styling
+├── assets/               Icons, screenshots, logo
+├── tests/                Preset and manifest smoke tests
+└── scripts/              Packaging and audit tools
+```
 
 ## Development
 
@@ -88,27 +140,26 @@ npm install
 npm run commercial:gate
 ```
 
-The commercial gate runs CI, extension packaging, manual QA artifact checks, and a static safety audit.
+## Roadmap
 
-## Documentation
+- [ ] Chrome Web Store production release
+- [ ] Custom compression presets
+- [ ] Export/import handoff packets
 
-| Area | File |
-|---|---|
-| Architecture | `docs/ARCHITECTURE.md` |
-| Methodology | `docs/METHODOLOGY.md` |
-| Decision routing | `docs/DECISION_ROUTING.md` |
-| Product brief | `docs/product/PRODUCT_BRIEF.md` |
-| Threat model | `docs/security/THREAT_MODEL.md` |
-| Chrome Web Store | `docs/chrome-web-store/STORE_RELEASE_CHECKLIST.md` |
-| Launch assets | `docs/launch/LAUNCH_PLAN.md` |
-| Open source governance | `docs/governance/OPEN_SOURCE_GOVERNANCE.md` |
+## Support & consulting
 
-## Open source
+Need deterministic AI systems with full traceability? LumenHelix builds reversible computation kernels, governance layers, and end-to-end AI integrations.
 
-promptPACK is MIT licensed. The open-source core is designed to remain local-first. Any contribution that changes permissions, insertion behavior, network behavior, storage, or high-stakes routing requires extra review.
+- **Website:** https://lumenhelix.com
+- **Services:** AI diagnostics, B.Y.O. support packages, governance audits
+- **Research:** TEN² kernel, R.U.B.I.C. boundary discipline, C.O.R.E. constraint lens
 
-## Status
+## License
 
-Commercial-grade open-source prototype / release candidate.
+Released under the MIT License.
 
-Not yet a polished Chrome Web Store production release.
+---
+
+<p align="center">
+  <sub>Engineered by <a href="https://lumenhelix.com">LumenHelix Solutions</a> — Applied Symbolic Dynamics & Reversible Computation.</sub>
+</p>
