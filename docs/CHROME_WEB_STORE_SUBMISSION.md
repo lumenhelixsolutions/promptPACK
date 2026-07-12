@@ -29,7 +29,7 @@ PromptPack injects curated prompt templates directly into the web UI of major AI
 
 **Category**: Productivity  
 **Language**: English (primary)  
-**Website**: https://github.com/lumenhelixsolutions/promptPACK  
+**Website**: https://github.com/LumenHelixLab/promptPACK  
 **Support email**: (add if available)
 
 ## Privacy Policy (Draft)
